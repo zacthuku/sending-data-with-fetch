@@ -15,7 +15,11 @@ function submitData(name, email){
         p.textContent=`NEW ID:${data.id}`;
         body.appendChild("p");
     })
-    .catch(errors=>{
-        
-    })
+    .catch(error=>{
+        const body = document.querySelector("body");
+        const errorMsg = document.createElement("p");
+        errorMsg.textContent = `Error: ${error.message}`;
+        body.appendChild(errorMsg);
+    });
+
 }
